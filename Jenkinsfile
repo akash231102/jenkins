@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        node {
+        // Timeout counter starts AFTER agent is allocated
+            label 'AGENT-1'
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
