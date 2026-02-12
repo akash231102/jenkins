@@ -1,7 +1,6 @@
 pipeline {
     agent {
         node {
-        // Timeout counter starts AFTER agent is allocated
             label 'AGENT-1'
         }
     }
@@ -20,6 +19,18 @@ pipeline {
             steps {
                 echo 'Deploying'
             }
+        }
+    }
+    post{
+        always{
+            echo " this will run on both "
+            cleanWs()
+        }
+        success{
+            echo "it is success "
+        }
+        failure{
+            echo " it is failed "
         }
     }
 }
