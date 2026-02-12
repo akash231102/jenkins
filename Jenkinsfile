@@ -1,4 +1,5 @@
 pipeline {
+    // pre-build
     agent {
         node {
             label 'AGENT-1'
